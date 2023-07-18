@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mydb.wsgi.application'
+WSGI_APPLICATION = 'mydb.wsgi.app'
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Database
