@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path,include
 from portfolio import views
 from TodoApp import urls
+from youtubeDB import views as youtubeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', views.projectView.as_view()),
+    path('videos/', youtubeView.myYoutubeViews.as_view()),
     path('todo/', include(urls)),
 ]
