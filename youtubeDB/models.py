@@ -17,3 +17,32 @@ class MyYotubeVideos(models.Model):
         managed = True
         verbose_name = 'MyYotubeVideo'
         verbose_name_plural = 'MyYotubeVideos'
+
+class SubscriberStories(models.Model):
+    storyTitle = models.CharField(max_length=1000)
+    name=models.CharField(max_length=1000)
+    story=models.TextField()
+    
+    def __str__(self):
+        return self.storyTitle
+
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'SubscriberStorie'
+        verbose_name_plural = 'SubscriberStories'
+
+class YoutubeEvents(models.Model):
+    eventName = models.CharField(max_length=1000)
+    eventDate=models.CharField(max_length=1000)
+    eventDescription=models.CharField(max_length=1000)
+    
+    def __str__(self):
+        return self.eventName
+
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'YoutubeEvent'
+        verbose_name_plural = 'YoutubeEvents'
+
