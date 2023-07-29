@@ -6,7 +6,7 @@ from django.db import models
 class Projects(models.Model):
     projectName = models.CharField(max_length=1000)
     technology = models.CharField(max_length=2000)
-    projectImage=models.URLField(default="https://shit.management/content/images/size/w2000/2019/07/team_work.jpg")
+    projectImage=models.URLField(default="https://drive.google.com/uc?export=view&id=143yjY3rCG_R4EWR61iOAb-XynE1ZRUFl")
     description=models.TextField()
     url=models.CharField(max_length=5000,null=True,default="default")
     video=models.CharField(max_length=5000,null=True,default="default")

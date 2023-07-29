@@ -5,7 +5,7 @@ from pyexpat import model
 
 class MyYotubeVideos(models.Model):
     videoName = models.CharField(max_length=1000)
-    thumbnail=models.URLField(default="https://shit.management/content/images/size/w2000/2019/07/team_work.jpg")
+    thumbnail=models.URLField(default="https://drive.google.com/uc?export=view&id=143yjY3rCG_R4EWR61iOAb-XynE1ZRUFl")
     description=models.TextField()
     url=models.CharField(max_length=5000,null=True,default="default")
     
@@ -35,7 +35,8 @@ class SubscriberStories(models.Model):
 class YoutubeEvents(models.Model):
     eventName = models.CharField(max_length=1000)
     eventDate=models.CharField(max_length=1000)
-    eventDescription=models.CharField(max_length=1000)
+    eventDescription=models.TextField()
+    eventImage=models.URLField(blank=True)
     
     def __str__(self):
         return self.eventName
