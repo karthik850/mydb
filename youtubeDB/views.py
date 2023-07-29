@@ -11,7 +11,7 @@ from .serializers import MYYoutubeEventsSerializer, MyYoutubeVideosSerializers, 
 
 class myYoutubeViews(APIView):
     def get(self,request):
-        videos1=MyYotubeVideos.objects.all()
+        videos1=MyYotubeVideos.objects.all().order_by('id').values()
         serializer=MyYoutubeVideosSerializers(videos1,many=True)
         return Response(serializer.data)
 
@@ -25,7 +25,7 @@ class subscriberStoryViews(APIView):
 
 class myYoutubeEvents(APIView):
     def get(self,request):
-        events=YoutubeEvents.objects.all()
+        events=YoutubeEvents.objects.all().order_by('-id').values()
         serializer=MYYoutubeEventsSerializer(events,many=True)
         return Response(serializer.data)
 
