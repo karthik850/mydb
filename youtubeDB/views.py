@@ -4,8 +4,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import MyYotubeVideos, SubscriberStories, YoutubeEvents
-from .serializers import MYYoutubeEventsSerializer, MyYoutubeVideosSerializers, SubscriberStoriesSerializer
+from .models import MileStones, MyYotubeVideos, SubscriberStories, YoutubeEvents
+from .serializers import MYYoutubeEventsSerializer, MyYoutubeMilestonesSerializers, MyYoutubeVideosSerializers, SubscriberStoriesSerializer
 
 # Create your views here.
 
@@ -29,3 +29,9 @@ class myYoutubeEvents(APIView):
         serializer=MYYoutubeEventsSerializer(events,many=True)
         return Response(serializer.data)
 
+
+class myYotubeMilestone(APIView):
+    def get(self,request):
+        milestones=MileStones.objects.all().order_by('-id').values()
+        serializer=MyYoutubeMilestonesSerializers(milestones,many=True)
+        return Response(serializer.data)

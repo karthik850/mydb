@@ -2,7 +2,7 @@ from dataclasses import fields
 from pyexpat import model
 from rest_framework import serializers
 
-from .models import MyYotubeVideos,SubscriberStories, YoutubeEvents
+from .models import MileStones, MyYotubeVideos,SubscriberStories, YoutubeEvents
 
 class MyYoutubeVideosSerializers(serializers.ModelSerializer):
     class Meta:
@@ -17,4 +17,10 @@ class SubscriberStoriesSerializer(serializers.ModelSerializer):
 class MYYoutubeEventsSerializer(serializers.ModelSerializer):
     class Meta:
         model = YoutubeEvents
+        fields='__all__'
+
+        
+class MyYoutubeMilestonesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = MileStones
         fields='__all__'

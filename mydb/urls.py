@@ -25,6 +25,7 @@ urlpatterns = [
     path('projects/', views.projectView.as_view()),
     path('videos/post', youtubeView.subscriberStoryViews.as_view()),
     path('videos/events', youtubeView.myYoutubeEvents.as_view()),
+    path('videos/milestones', youtubeView.myYotubeMilestone.as_view()),
     path('videos/', youtubeView.myYoutubeViews.as_view()),
     path('todo/', include(urls)),
 ]

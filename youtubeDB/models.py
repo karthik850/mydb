@@ -47,3 +47,16 @@ class YoutubeEvents(models.Model):
         verbose_name = 'YoutubeEvent'
         verbose_name_plural = 'YoutubeEvents'
 
+class MileStones(models.Model):
+    milestoneName = models.CharField(max_length=1000)
+    mileStoneDate=models.DateField()
+    
+    def __str__(self):
+        return self.milestoneName
+
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'MileStone'
+        verbose_name_plural = 'MileStones'
+
