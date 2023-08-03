@@ -27,5 +27,6 @@ urlpatterns = [
     path('videos/events', youtubeView.myYoutubeEvents.as_view()),
     path('videos/milestones', youtubeView.myYotubeMilestone.as_view()),
     path('videos/', youtubeView.myYoutubeViews.as_view()),
+    path(r'^tinymce/',include('tinymce.urls')),
     path('todo/', include(urls)),
 ]

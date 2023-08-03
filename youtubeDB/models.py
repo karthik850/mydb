@@ -1,5 +1,5 @@
 from django.db import models
-from pyexpat import model
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -21,7 +21,7 @@ class MyYotubeVideos(models.Model):
 class SubscriberStories(models.Model):
     storyTitle = models.CharField(max_length=1000)
     name=models.CharField(max_length=1000)
-    story=models.TextField()
+    story=HTMLField()
     
     def __str__(self):
         return self.storyTitle

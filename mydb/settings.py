@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'portfolio',
     'TodoApp',
     'youtubeDB',
-    'corsheaders'
+    'corsheaders',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
