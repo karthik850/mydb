@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include,re_path
 from portfolio import views
 from TodoApp import urls
 from youtubeDB import views as youtubeView
@@ -27,6 +27,6 @@ urlpatterns = [
     path('videos/events', youtubeView.myYoutubeEvents.as_view()),
     path('videos/milestones', youtubeView.myYotubeMilestone.as_view()),
     path('videos/', youtubeView.myYoutubeViews.as_view()),
-    path(r'^tinymce/',include('tinymce.urls')),
+    re_path(r'^tinymce/',include('tinymce.urls')),
     path('todo/', include(urls)),
 ]
